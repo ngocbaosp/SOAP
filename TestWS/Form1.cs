@@ -67,8 +67,8 @@ namespace TestWS
             SOAPReqBody.LoadXml(@"<?xml version=""1.0"" encoding=""utf-8""?>  
             <soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-   instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">  
              <soap:Body>  
-                <Test xmlns=""http://tempuri.org/"">
-                <FirstName>"+ FirstName+ @"</FirstName>
+                <Test xmlns=""TestWebService"">
+                <FirstName>" + FirstName+ @"</FirstName>
                 <LastName>" + LastName+ @"</LastName>
                 </Test>                
               </soap:Body>  
@@ -97,7 +97,7 @@ namespace TestWS
             //Making Web Request  
             HttpWebRequest Req = (HttpWebRequest)WebRequest.Create(@"https://localhost:44334/TestWS.asmx");
             //SOAPAction  
-            Req.Headers.Add(@"SOAPAction:http://tempuri.org/Test");
+            Req.Headers.Add(@"SOAPAction:TestWebService/Test");
             //Content_type  
             Req.ContentType = "text/xml;charset=\"utf-8\"";
             Req.Accept = "text/xml";
